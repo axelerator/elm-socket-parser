@@ -1,4 +1,4 @@
-name: Example
+name: Elm Checks
 
 on:
   push:
