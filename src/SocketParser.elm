@@ -1,4 +1,4 @@
-module SocketParser exposing (..)
+module SocketParser exposing (Fragment, Pos, Side(..), Socket, SocketSet, allSides, empty, parse)
 
 
 type alias Fragment =
@@ -20,6 +20,11 @@ type Side
     | Back
     | Left
     | Right
+
+
+allSides : List Side
+allSides =
+    [ Top, Front, Bottom, Back, Left, Right ]
 
 
 type alias SocketSet =
