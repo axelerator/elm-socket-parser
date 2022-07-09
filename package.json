@@ -1,6 +1,10 @@
 {
   "devDependencies": {
     "elm-review": "^2.7.2",
-    "elm-test": "^0.19.1-revision9"
+    "elm-test": "^0.19.1-revision9",
+    "elm-tooling": "^1.8.0"
+  },
+  "scripts": {
+    "postinstall": "elm-tooling install"
   }
 }
