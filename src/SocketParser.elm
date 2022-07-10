@@ -1,8 +1,28 @@
-module SocketParser exposing (Fragment, Pos, Side(..), Socket, SocketSet, allSides, empty, parse)
+module SocketParser exposing
+    ( Fragment(..)
+    , Pos
+    , Side(..)
+    , Socket
+    , SocketSet
+    , allSides
+    , empty
+    , parse
+    , parseFragment
+    )
 
 
-type alias Fragment =
-    Int
+type Fragment
+    = XFragment
+
+
+parseFragment : String -> Result String Fragment
+parseFragment s =
+    case s of
+        "X" ->
+            Ok XFragment
+
+        _ ->
+            Err <| "Unknown fragment: " ++ s
 
 
 type alias Pos =

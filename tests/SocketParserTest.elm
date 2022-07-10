@@ -1,7 +1,7 @@
 module SocketParserTest exposing (suite)
 
 import Expect
-import SocketParser exposing (allSides, empty, parse)
+import SocketParser exposing (Fragment(..), allSides, empty, parse, parseFragment)
 import Test exposing (Test, describe, test)
 
 
@@ -55,5 +55,12 @@ suite =
                     Expect.equal
                         6
                         (List.length allSides)
+            , describe "the parseFragment function"
+                [ test "can parse X " <|
+                    \_ ->
+                        Expect.equal
+                            (Ok XFragment)
+                            (parseFragment "X")
+                ]
             ]
         ]
